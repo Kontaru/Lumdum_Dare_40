@@ -34,10 +34,16 @@ public class AC_Enemy : AC_Living
 
     bool hasTarget;
 
+    //-----------------------------------------------------------
+    public GameObject GO_Billboard;
+    EnemyBillboard EB_Sprite;
+
 	// Use this for initialization
 	protected override void Start () 
     {
         base.Start();
+
+        EB_Sprite = GO_Billboard.GetComponent<EnemyBillboard>();
         pathfinder = GetComponent<UnityEngine.AI.NavMeshAgent>();
         skinMaterial = GetComponent<Renderer>().material;
         originalColour = skinMaterial.color;
@@ -95,13 +101,16 @@ public class AC_Enemy : AC_Living
         {
             if (fieldOfView.withinchasingrange == true)
             {
+                EB_Sprite.BL_Spotted = true;
                 currentState = State.Chasing;
             }
+            else
+                EB_Sprite.BL_Spotted = false;
         }
-        if (player.currentState == AC_Player.State.Attack)
+        /*if (player.currentState == AC_Player.State.Attack)
         {
             currentState = State.Idle;
-        }
+        }*/
     }
 
     IEnumerator Attack()
@@ -148,7 +157,7 @@ public class AC_Enemy : AC_Living
 
                 if (!dead)
                 {
-                    pathfinder.speed = mFL_moveSpeed * 2;
+                    pathfinder.speed = mFL_moveSpeed * 1.5f;
                     pathfinder.SetDestination(targetPosition);
                 }
             } 

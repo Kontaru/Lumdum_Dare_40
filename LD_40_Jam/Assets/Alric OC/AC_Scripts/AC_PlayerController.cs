@@ -15,7 +15,7 @@ public class AC_PlayerController : MonoBehaviour
 
     public void Move(Vector3 RB_velocity)
     {
-        velocity = RB_velocity;
+        velocity = RB_velocity.normalized;
     }
 
     public void LookAt(Vector3 lookPoint)
@@ -25,6 +25,6 @@ public class AC_PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        RB_PC.MovePosition(RB_PC.position + velocity * Time.fixedDeltaTime);
+        RB_PC.MovePosition(RB_PC.position + velocity * Time.deltaTime);
     }
 }

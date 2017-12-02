@@ -7,7 +7,7 @@ public class AC_Player : AC_Living
     public enum State { Attack }
     public State currentState;
 
-    public float mFL_moveSpeed = 5;
+    public float mFL_moveSpeed;
     public float range = 10f;
 
     float nextAttack;
