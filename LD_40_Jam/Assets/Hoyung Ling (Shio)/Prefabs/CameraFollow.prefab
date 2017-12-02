@@ -126,9 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BL_FollowPC: 1
-  GO_Body: {fileID: 0}
-  lookAt: {fileID: 0}
-  smoothSpeed: 5
+  GO_Player: {fileID: 0}
+  otherLook: {fileID: 0}
+  smoothSpeed: 2
   playerfollowSmoothSpeed: 10
 --- !u!124 &124678450650159074
 Behaviour:

@@ -21,7 +21,6 @@ public class PC_Move : MonoBehaviour {
         if (BL_Staggered)
         {
             FL_moveSpeed = 0;
-            return;
         }else
         {
             FL_moveSpeed = FL_defaultSpeed;

@@ -120,7 +120,7 @@ public class AC_Enemy : AC_Living
 
         Vector3 originalPositon = transform.position;
         Vector3 dirToTarget = (target.position - transform.position).normalized;
-        Vector3 attackPosition = target.position - dirToTarget * (myCollisionRadius);
+        Vector3 attackPosition = target.position - dirToTarget;
 
 
         float attackSpeed = 3;
