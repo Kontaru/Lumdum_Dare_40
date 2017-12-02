@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PC_Move : MonoBehaviour {
 
-    public KeyCode KC_Forward;
-    public KeyCode KC_Left;
-    public KeyCode KC_Down;
-    public KeyCode KC_Right;
+    Rigidbody RB_PC;
+    Vector3 direction;
     public bool BL_Staggered = false;
+    public float FL_moveSpeed;
 
     // Use this for initialization
     void Start () {
-		
+        RB_PC = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -20,11 +19,10 @@ public class PC_Move : MonoBehaviour {
         if (BL_Staggered) return;
 
         Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        /*Vector3 moveVelocity = moveInput.normalized * mFL_moveSpeed;
-        controller.Move(moveVelocity);
+        direction = moveInput.normalized * FL_moveSpeed;
 
         //Look Input
-        Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane grounPlane = new Plane(Vector3.up, Vector3.up);
         float rayDistance;
 
@@ -32,9 +30,13 @@ public class PC_Move : MonoBehaviour {
         {
             Vector3 point = ray.GetPoint(rayDistance);
             //Debug.DrawLine(ray.origin,point, Color.red);
-            controller.LookAt(point);
+            Vector3 heightCorrectedPoint = new Vector3(point.x, transform.position.y, point.z);
+            transform.LookAt(heightCorrectedPoint);
         }
-        Attack();
-        */
+    }
+
+    void FixedUpdate()
+    {
+        RB_PC.MovePosition(transform.position + direction * Time.fixedDeltaTime);
     }
 }
