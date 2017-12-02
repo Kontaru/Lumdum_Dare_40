@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 114143665233991698}
   - component: {fileID: 114913107028692840}
   - component: {fileID: 114227929388731444}
+  - component: {fileID: 114208868680704566}
   - component: {fileID: 23253724193027380}
   - component: {fileID: 195169708037164690}
   m_Layer: 8
@@ -254,14 +255,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swings: 3
-  dashes: 2
   KC_Attack: 323
-  KC_Dash: 32
   IN_Swings: 3
-  IN_Dashes: 2
   BL_Staggered: 0
   GO_MeleeCast: {fileID: 1904202290899546, guid: 71a8a8782cd853d4893d4ceef5207c23,
     type: 2}
+--- !u!114 &114208868680704566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758051654850700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab9ae249abac364b9654dc695171e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinGraphic: {fileID: 0}
+  coins: 0
 --- !u!114 &114227929388731444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -303,6 +314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368b95e34df3b9e42a19f8e9a6636056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashes: 2
+  KC_Dash: 32
+  IN_Dashes: 2
   BL_Staggered: 0
   FL_moveSpeed: 5
 --- !u!136 &136254799488857974
