@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PC_Controller : MonoBehaviour {
 
+    //Bool
+    bool BL_Staggered = false;
+    public float FL_StaggerTimer = 5.0f;
+
     //Controllers
     PC_Melee CC_Melee;
     PC_Move CC_Move;
@@ -16,6 +20,15 @@ public class PC_Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        BL_Staggered = CC_Melee.BL_Staggered;
+        CC_Move.BL_Staggered = BL_Staggered;
+
+        if (BL_Staggered == true)
+            StaggerTimer(FL_StaggerTimer);
 	}
+
+    IEnumerator StaggerTimer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+    }
 }

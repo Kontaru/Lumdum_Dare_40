@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PC_Melee : MonoBehaviour {
 
+    public int swings;
+    public int dashes;
     public KeyCode KC_Attack;
     public KeyCode KC_Dash;
     int IN_Swings = 3;
@@ -12,7 +14,8 @@ public class PC_Melee : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        IN_Swings = swings;
+        IN_Dashes = dashes;
 	}
 	
 	// Update is called once per frame
@@ -30,7 +33,10 @@ public class PC_Melee : MonoBehaviour {
         IN_Swings--;
         //Cast a melee swing
         if (IN_Swings == 0)
+        {
+            IN_Swings = swings;
             BL_Staggered = true;
+        }
     }
 
     void Dash()
@@ -38,6 +44,9 @@ public class PC_Melee : MonoBehaviour {
         IN_Dashes--;
         //Move the player in a direction
         if (IN_Dashes == 0)
+        {
+            IN_Dashes = dashes;
             BL_Staggered = true;
+        }
     }
 }
