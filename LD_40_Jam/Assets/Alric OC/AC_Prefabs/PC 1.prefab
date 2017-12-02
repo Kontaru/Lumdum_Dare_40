@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 5487548}
   - component: {fileID: 11457044}
   - component: {fileID: 11404750}
-  - component: {fileID: 11469244}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: PC 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -119,20 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496b48d90d349c749825f7321f976e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11469244
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 164752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2627fca39bb2c7439df7e7a9b006ca7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponHold: {fileID: 0}
-  startingGun: {fileID: 11456472, guid: 51ae4835c0358d348bc311e1a70c4dba, type: 2}
-  equippedGun: {fileID: 0}
 --- !u!136 &13653044
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -180,7 +165,7 @@ GameObject:
   - component: {fileID: 33031014841137184}
   - component: {fileID: 65751963293049530}
   - component: {fileID: 23514654595493598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +199,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 42a9c0ac7648d0342b6fce724aba2763, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
