@@ -973,53 +973,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 114581917567121098, guid: 7e05dedeba234d547bd325a3c2a9ba16,
-        type: 2}
-      propertyPath: alphaStart.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114581917567121098, guid: 7e05dedeba234d547bd325a3c2a9ba16,
-        type: 2}
-      propertyPath: alphaStart.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114581917567121098, guid: 7e05dedeba234d547bd325a3c2a9ba16,
-        type: 2}
-      propertyPath: alphaStart.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114581917567121098, guid: 7e05dedeba234d547bd325a3c2a9ba16,
-        type: 2}
-      propertyPath: alphaEnd.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114581917567121098, guid: 7e05dedeba234d547bd325a3c2a9ba16,
-        type: 2}
-      propertyPath: alphaEnd.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114581917567121098, guid: 7e05dedeba234d547bd325a3c2a9ba16,
-        type: 2}
-      propertyPath: alphaEnd.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114581917567121098, guid: 7e05dedeba234d547bd325a3c2a9ba16,
-        type: 2}
-      propertyPath: alphaEnd.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114581917567121098, guid: 7e05dedeba234d547bd325a3c2a9ba16,
-        type: 2}
-      propertyPath: timer
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114581917567121098, guid: 7e05dedeba234d547bd325a3c2a9ba16,
-        type: 2}
-      propertyPath: Repeatable
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114581917567121098, guid: 7e05dedeba234d547bd325a3c2a9ba16, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e05dedeba234d547bd325a3c2a9ba16, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1470407505

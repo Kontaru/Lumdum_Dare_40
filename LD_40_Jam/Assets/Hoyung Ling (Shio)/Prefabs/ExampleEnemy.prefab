@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4474102969766516}
   - component: {fileID: 212705354568405234}
-  - component: {fileID: 114581917567121098}
   m_Layer: 0
   m_Name: '!'
   m_TagString: Untagged
@@ -85,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4035355329663452}
   - component: {fileID: 212215480979195106}
-  - component: {fileID: 114977338079375288}
+  - component: {fileID: 114811129154909130}
   m_Layer: 0
   m_Name: Enemy Sprite
   m_TagString: Untagged
@@ -162,25 +161,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114581917567121098
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1265401448556760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d2ef9f27d16c0041b2a3c425823df24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alphaStart: {r: 0, g: 0, b: 0, a: 0}
-  alphaEnd: {r: 0, g: 0, b: 0, a: 0}
-  BeginFade: 1
-  Reversible: 0
-  Repeatable: 0
-  timer: 0
-  maxcount: 0
---- !u!114 &114977338079375288
+--- !u!114 &114811129154909130
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -188,7 +169,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1882480490122368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce3cc04250931f94096f0fa4de0280bc, type: 3}
+  m_Script: {fileID: 11500000, guid: f79c868c2a52b0e4abfa42f31d3a3c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BL_LookAtCam: 0
