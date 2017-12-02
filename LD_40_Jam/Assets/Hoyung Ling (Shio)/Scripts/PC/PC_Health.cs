@@ -17,7 +17,7 @@ public class PC_Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (health == 4)
+		//if (health == 4)
             
 	}
 }
