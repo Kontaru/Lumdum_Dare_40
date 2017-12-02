@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025597995334792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.764389, y: 0, z: 13.46}
+  m_LocalPosition: {x: -4.764389, y: 0, z: 13.460001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4220884670573316}
@@ -128,6 +128,8 @@ MonoBehaviour:
   BL_FollowPC: 1
   GO_Body: {fileID: 0}
   lookAt: {fileID: 0}
+  smoothSpeed: 5
+  playerfollowSmoothSpeed: 10
 --- !u!124 &124678450650159074
 Behaviour:
   m_ObjectHideFlags: 1

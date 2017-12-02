@@ -9,10 +9,11 @@ public class CameraFollow : MonoBehaviour {
 
     public bool BL_FollowPC;
 
-    public GameObject GO_Body;          //Reference to player
-    public GameObject lookAt;
+    public GameObject GO_Player;          //Reference to player
+    public GameObject otherLook;
 
-    private float smoothSpeed = 1f;
+    public float smoothSpeed = 1f;
+    public float playerfollowSmoothSpeed = 1f;
 
     void Update () {
         PCFollowBody();
@@ -23,11 +24,18 @@ public class CameraFollow : MonoBehaviour {
         //Sets transform to the player
         if (BL_FollowPC)
         {
-            if (Vector3.Distance(transform.position, GO_Body.transform.position) < 2.0f)
-                transform.position = Vector3.Lerp(transform.position, GO_Body.transform.position, smoothSpeed * 5 * Time.deltaTime);
+            if (Vector3.Distance(transform.position, GO_Player.transform.position) < 2.0f)
+                transform.position = Vector3.Lerp(transform.position, GO_Player.transform.position, playerfollowSmoothSpeed * Time.deltaTime);
             else
-                transform.position = Vector3.Lerp(transform.position, GO_Body.transform.position, smoothSpeed * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, GO_Player.transform.position, smoothSpeed * Time.deltaTime);
         }
-        //transform.position = Vector3.Lerp(transform.position, lookAt.transform.position, smoothSpeed * Time.deltaTime);
+        else
+        {
+            if (otherLook != null)
+            {
+
+                transform.position = Vector3.Lerp(transform.position, otherLook.transform.position, smoothSpeed * Time.deltaTime);
+            }
+        }
     }
 }
