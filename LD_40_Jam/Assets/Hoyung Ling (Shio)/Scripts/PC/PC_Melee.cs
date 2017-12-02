@@ -8,8 +8,8 @@ public class PC_Melee : MonoBehaviour {
     public int dashes;
     public KeyCode KC_Attack;
     public KeyCode KC_Dash;
-    int IN_Swings = 3;
-    int IN_Dashes = 2;
+    public int IN_Swings = 3;
+    public int IN_Dashes = 2;
     public bool BL_Staggered = false;
 
 	// Use this for initialization
