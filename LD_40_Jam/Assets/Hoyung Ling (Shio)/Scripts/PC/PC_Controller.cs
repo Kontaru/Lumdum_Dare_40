@@ -6,7 +6,7 @@ public class PC_Controller : MonoBehaviour {
 
     //Bool
     public bool BL_Staggered = false;
-    bool BL_StaggerToggle = false;
+    public bool BL_StaggerToggle = false;
     public float FL_StaggerTimer = 1.0f;
 
     //Controllers
@@ -21,15 +21,23 @@ public class PC_Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!BL_Staggered)
+        if (CC_Melee.BL_Staggered == true)
         {
             BL_Staggered = CC_Melee.BL_Staggered;
             CC_Move.BL_Staggered = BL_Staggered;
-        }else if (BL_Staggered)
+        }
+
+        if (CC_Move.BL_Staggered == true)
+        {
+            BL_Staggered = CC_Move.BL_Staggered;
+            CC_Melee.BL_Staggered = BL_Staggered;
+        }
+
+        if (BL_Staggered)
         {
             if (BL_StaggerToggle == false)
             {
-                StaggerTimer(FL_StaggerTimer);
+                StartCoroutine(StaggerTimer(FL_StaggerTimer));
                 BL_StaggerToggle = true;
             }
         }

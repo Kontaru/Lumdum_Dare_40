@@ -51,4 +51,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ba3cb25fa21714cae35ea595726a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: 
+    description: 
+    source: {fileID: 0}
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 0
+    endVol: 0
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: 
+    description: 
+    source: {fileID: 0}
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 0
+    endVol: 0
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: 
+    description: 
+    source: {fileID: 0}
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 0
+    endVol: 0
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: 
+    description: 
+    source: {fileID: 0}
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 0
+    endVol: 0
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: 
+    description: 
+    source: {fileID: 0}
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 0
+    endVol: 0
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0

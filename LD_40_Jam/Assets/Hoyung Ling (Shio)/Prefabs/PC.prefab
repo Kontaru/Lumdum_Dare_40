@@ -240,7 +240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BL_Staggered: 0
-  FL_StaggerTimer: 5
+  BL_StaggerToggle: 0
+  FL_StaggerTimer: 1
 --- !u!114 &114143665233991698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,11 +255,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swings: 3
   dashes: 2
-  KC_Attack: 324
+  KC_Attack: 323
   KC_Dash: 32
   IN_Swings: 3
   IN_Dashes: 2
   BL_Staggered: 0
+  GO_MeleeCast: {fileID: 1904202290899546, guid: 71a8a8782cd853d4893d4ceef5207c23,
+    type: 2}
 --- !u!114 &114227929388731444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,7 +273,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7fb641c4a708e47aee45040711f901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  Health:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  health: 4
 --- !u!114 &114799228656597210
 MonoBehaviour:
   m_ObjectHideFlags: 1
