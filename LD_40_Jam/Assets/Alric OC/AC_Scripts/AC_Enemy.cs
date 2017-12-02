@@ -26,7 +26,6 @@ public class AC_Enemy : AC_Living
 
     float attackDistanceThreshold = 1.5f;
     float timeBetweenAttacks = 1;
-    float damage = 1;
     int destPoint = 0;
 
     float nextAttackTime;
@@ -56,7 +55,6 @@ public class AC_Enemy : AC_Living
 
             target = GameObject.FindGameObjectWithTag("Player").transform;
             targetEntity = target.GetComponent<AC_Living>();
-            targetEntity.OnDeath += OnTargetDeath;
 
             myCollisionRadius = GetComponent<CapsuleCollider>().radius;
             targetCollisionRadius = target.GetComponent<CapsuleCollider>().radius;
@@ -67,20 +65,6 @@ public class AC_Enemy : AC_Living
         GotoNextPoint();
 	}
 
-    public override void TakeHit(float damage, Vector3 hitPoint, Vector3 hitDirection)
-    {
-        if (damage >= health)
-        {
-            Destroy(Instantiate(deathEffect, hitPoint, Quaternion.FromToRotation(Vector3.forward, hitDirection)) as GameObject, 2);
-        }
-        base.TakeHit(damage, hitPoint, hitDirection);
-    }
-
-    void OnTargetDeath ()
-    {
-        hasTarget = false;
-        currentState = State.Idle;
-    }
 	
 	// Update is called once per frame
     void Update()
@@ -141,7 +125,6 @@ public class AC_Enemy : AC_Living
             if (percent >= .5f && !hasAppliedDamage)
             {
                 hasAppliedDamage = true;
-                targetEntity.TakeDamage(damage);
             }
             percent += Time.deltaTime * attackSpeed;
             float interpolation = (-Mathf.Pow(percent,2) + percent) * 4;
