@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PC_Controller : MonoBehaviour {
 
+    public int health;
+    int max_health;
+
     //Bool
     bool BL_Staggered = false;
     public float FL_StaggerTimer = 5.0f;
@@ -30,5 +33,8 @@ public class PC_Controller : MonoBehaviour {
     IEnumerator StaggerTimer(float delay)
     {
         yield return new WaitForSeconds(delay);
+        BL_Staggered = false;
+        CC_Move.BL_Staggered = BL_Staggered;
+        CC_Melee.BL_Staggered = BL_Staggered;
     }
 }
