@@ -25,12 +25,6 @@ public class AC_Player : AC_Living
         base.Start();
         controller = GetComponent<AC_PlayerController>();
         viewCamera = Camera.main;
-
-        if (GameObject.FindGameObjectWithTag("Enemy") != null)
-        {
-            target = GameObject.FindGameObjectWithTag("Enemy").transform;
-            targetEntity = target.GetComponent<AC_Living>();
-        }
     }
 
     // Update is called once per frame

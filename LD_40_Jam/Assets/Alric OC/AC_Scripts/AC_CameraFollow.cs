@@ -7,7 +7,7 @@ public class AC_CameraFollow : MonoBehaviour
 
     private bool smooth = true;
     private float smoothSpeed = 0.125f;
-    private Vector3 offset = new Vector3(0,10,-5);
+    public Vector3 offset = new Vector3(0,10,-5);
 
 	// Use this for initialization
 	private void Start () 
