@@ -79,7 +79,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7d10bce98a2f63b43a369f66fb6c53e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -187,6 +187,7 @@ MonoBehaviour:
   health: 0
   deathEffect: {fileID: 194702, guid: ba328c08808732344ba5e2b1c5d19f30, type: 2}
   points: []
+  GO_Billboard: {fileID: 0}
 --- !u!136 &13695578
 CapsuleCollider:
   m_ObjectHideFlags: 1
