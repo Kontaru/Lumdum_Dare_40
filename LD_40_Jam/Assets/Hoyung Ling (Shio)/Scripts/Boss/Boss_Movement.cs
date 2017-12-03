@@ -43,11 +43,12 @@ public class Boss_Movement : MonoBehaviour {
 
         if(BL_Alerted)
         {
+            /*
             if (BL_Dash == false && Time.time > FL_Cooldown)
             {
                 FL_Cooldown = Time.time + FL_Delay;
                 StartCoroutine(MoveDash());
-            }
+            }*/
 
             if (Vector3.Distance(Target.transform.position, transform.position) < 10.0f)
                 RunFrom();
@@ -56,6 +57,7 @@ public class Boss_Movement : MonoBehaviour {
         }
 	}
 
+    /*
     void FixedUpdate()
     {
         RB_Enemy.MovePosition(transform.position + direction * Time.fixedDeltaTime);
@@ -83,7 +85,7 @@ public class Boss_Movement : MonoBehaviour {
         yield return new WaitForSeconds(0.2f);
 
         BL_Dash = false;
-    }
+    }*/
 
     public void ChaseTo()
     {
