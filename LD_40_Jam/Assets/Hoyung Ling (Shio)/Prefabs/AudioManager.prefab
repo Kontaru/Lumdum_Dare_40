@@ -262,3 +262,66 @@ MonoBehaviour:
     wasFading: 0
     fadeTime: 0
     fadeStartTime: 0
+  - name: OrcBoi Death
+    description: The sound of metal hitting leather
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: e720ab5bb5dac504bb90d26f785b80be, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 1
+    endVol: 1
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: SkellBoi Death
+    description: The sound of metal hitting leather
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 375c75d2cfb2fdd469009d55c2d1da94, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 1
+    endVol: 1
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: SneakyBoi Death
+    description: The sound of metal hitting leather
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: e1a01286d6688074b8f701dbca089a1c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 1
+    endVol: 1
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0

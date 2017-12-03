@@ -5,18 +5,35 @@ using UnityEngine;
 
 public class Boss_Movement : MonoBehaviour {
 
+    //Dashes
+    bool BL_Dash = false;
+    public float FL_moveSpeed;
+    float FL_defaultSpeed;
+
+    float FL_Cooldown;
+    public float FL_Delay = 5.0f;
+
+    //Backing up
     private float nextTurnTime;
     private Transform startTransform;
 
     public float multiplyBy;
 
+    //Important variables
     NavMeshAgent enemy;
+    Rigidbody RB_Enemy;
+    Vector3 direction;
+    Vector3 moveInput;
+
     public GameObject Target;
     public bool BL_Alerted = false;
 
 	// Use this for initialization
 	void Start () {
         enemy = GetComponent<NavMeshAgent>();
+        RB_Enemy = GetComponent<Rigidbody>();
+        FL_Cooldown = Time.time;
+        FL_defaultSpeed = FL_moveSpeed;
 	}
 	
 	// Update is called once per frame
@@ -26,12 +43,47 @@ public class Boss_Movement : MonoBehaviour {
 
         if(BL_Alerted)
         {
-            if (Vector3.Distance(Target.transform.position, transform.position) < 5.0f)
+            if (BL_Dash == false && Time.time > FL_Cooldown)
+            {
+                FL_Cooldown = Time.time + FL_Delay;
+                StartCoroutine(MoveDash());
+            }
+
+            if (Vector3.Distance(Target.transform.position, transform.position) < 10.0f)
                 RunFrom();
-            else if (Vector3.Distance(Target.transform.position, transform.position) >= 5.0f)
+            else if (Vector3.Distance(Target.transform.position, transform.position) >= 10.0f)
                 ChaseTo();
         }
 	}
+
+    void FixedUpdate()
+    {
+        RB_Enemy.MovePosition(transform.position + direction * Time.fixedDeltaTime);
+    }
+
+    void RandomDirection()
+    {
+        int rand = Random.Range(0, 1);
+
+        if (rand == 0)
+            moveInput = Vector3.left;
+        else
+            moveInput = Vector3.right;
+
+        direction = moveInput.normalized * FL_moveSpeed;
+    }
+
+    IEnumerator MoveDash()
+    {
+        BL_Dash = true;
+        RandomDirection();
+        //Do the dash and decrease dash charges
+        FL_moveSpeed = FL_defaultSpeed * 3;
+
+        yield return new WaitForSeconds(0.2f);
+
+        BL_Dash = false;
+    }
 
     public void ChaseTo()
     {
@@ -56,7 +108,7 @@ public class Boss_Movement : MonoBehaviour {
         NavMeshHit hit;    // stores the output in a variable called hit
 
         // 5 is the distance to check, assumes you use default for the NavMesh Layer name
-        NavMesh.SamplePosition(runTo, out hit, 5, 1 << NavMesh.GetNavMeshLayerFromName("Default"));
+        NavMesh.SamplePosition(runTo, out hit, 5, 1 << NavMesh.GetAreaFromName("Default"));
         //Debug.Log("hit = " + hit + " hit.position = " + hit.position);
 
         // just used for testing - safe to ignore
