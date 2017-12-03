@@ -18,7 +18,7 @@ public class PC_Pouch : MonoBehaviour {
     Vector3 endPos;
 
     RectTransform myCoin = new RectTransform();
-    public int coins;
+    public static int coins;
 
 	// Use this for initialization
 	void Start () {
