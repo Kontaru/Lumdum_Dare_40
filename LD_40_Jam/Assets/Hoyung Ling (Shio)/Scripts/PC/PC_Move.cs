@@ -7,9 +7,9 @@ public class PC_Move : MonoBehaviour {
     [Header("Dashes")]
     public int dashes;
     public KeyCode KC_Dash;
-    public int IN_Dashes = 2;
+    int IN_Dashes = 2;
     bool BL_Dash = false;
-    bool BL_HasDashed = false;
+    public bool BL_Moving = true;
 
     Rigidbody RB_PC;
     Vector3 direction;
@@ -48,7 +48,9 @@ public class PC_Move : MonoBehaviour {
             FL_moveSpeed = FL_defaultSpeed / 5;
         }
         else if (Input.GetKeyDown(KC_Dash) && BL_Dash == false)
+        {
             StartCoroutine(MoveDash());
+        }
         else if (BL_Dash == false)
         {
             FL_moveSpeed = FL_defaultSpeed;
@@ -58,6 +60,11 @@ public class PC_Move : MonoBehaviour {
     void PlayerMove()
     {
         Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        if (moveInput != new Vector3(0, 0, 0))
+            BL_Moving = true;
+        else
+            BL_Moving = false;
+
         direction = moveInput.normalized * FL_moveSpeed;
     }
 
@@ -84,16 +91,26 @@ public class PC_Move : MonoBehaviour {
         IN_Dashes--;
         FL_moveSpeed = FL_defaultSpeed * 3;
 
+        AudioManager.instance.Play("Player Dash");
         yield return new WaitForSeconds(0.2f);
 
         //If dash charges is 0, stun the player
         if (IN_Dashes == 0)
         {
-            IN_Dashes = dashes;
+            ResetDash();
             BL_Staggered = true;
         }
 
-        BL_HasDashed = false;
         BL_Dash = false;
+    }
+
+    public void ResetDash()
+    {
+        IN_Dashes = dashes;
+    }
+
+    public int dashcount()
+    {
+        return IN_Dashes;
     }
 }

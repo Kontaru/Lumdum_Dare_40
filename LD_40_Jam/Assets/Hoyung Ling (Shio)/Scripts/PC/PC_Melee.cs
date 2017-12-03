@@ -6,7 +6,7 @@ public class PC_Melee : MonoBehaviour {
 
     public int swings;
     public KeyCode KC_Attack;
-    public int IN_Swings = 3;
+    int IN_Swings = 3;
 
     public bool BL_Staggered = false;
 
@@ -29,8 +29,24 @@ public class PC_Melee : MonoBehaviour {
         Instantiate(GO_MeleeCast, transform.position + new Vector3(0, 1, 0), transform.rotation);
         if (IN_Swings == 0)
         {
-            IN_Swings = swings;
             BL_Staggered = true;
+            StartCoroutine(AttackSwingReset());
         }
+    }
+
+    IEnumerator AttackSwingReset()
+    {
+        yield return new WaitForSeconds(1.0f);
+        ResetSwings();
+    }
+
+    public void ResetSwings()
+    {
+        IN_Swings = swings;
+    }
+
+    public int swingcount()
+    {
+        return IN_Swings;
     }
 }

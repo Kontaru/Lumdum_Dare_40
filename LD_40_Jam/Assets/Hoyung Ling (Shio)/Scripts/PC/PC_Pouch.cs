@@ -26,11 +26,6 @@ public class PC_Pouch : MonoBehaviour {
         startPos = myCoin.anchoredPosition;
         endPos = myCoin.anchoredPosition + new Vector2(0, 150);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     void TakeCoin(int value)
     {

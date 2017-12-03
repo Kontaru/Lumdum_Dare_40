@@ -8,6 +8,7 @@ public class PC_Controller : MonoBehaviour {
     public bool BL_Staggered = false;
     public bool BL_StaggerToggle = false;
     public float FL_StaggerTimer = 1.0f;
+    public bool BL_IsMoving;
 
     //Controllers
     PC_Melee CC_Melee;
@@ -21,6 +22,7 @@ public class PC_Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        BL_IsMoving = CC_Move.BL_Moving;
         if (CC_Melee.BL_Staggered == true)
         {
             BL_Staggered = CC_Melee.BL_Staggered;
@@ -48,7 +50,9 @@ public class PC_Controller : MonoBehaviour {
         yield return new WaitForSeconds(delay);
         BL_Staggered = false;
         CC_Move.BL_Staggered = BL_Staggered;
+        CC_Move.ResetDash();
         CC_Melee.BL_Staggered = BL_Staggered;
+        CC_Melee.ResetSwings();
         BL_StaggerToggle = false;
     }
 }
