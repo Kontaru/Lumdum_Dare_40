@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PC_Health : MonoBehaviour {
 
+    public int loadindex;
     public int health;
     int max_health;
 
@@ -19,7 +20,7 @@ public class PC_Health : MonoBehaviour {
 
         if(health <= 0)
         {
-            GameManager.instance.LoadScene(0);
+            GameManager.instance.LoadScene(loadindex);
         }
 
         AudioManager.instance.Play("Player Take Hit");
