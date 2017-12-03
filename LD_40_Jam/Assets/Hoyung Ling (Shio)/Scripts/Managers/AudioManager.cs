@@ -38,6 +38,11 @@ public class AudioManager : MonoBehaviour {
 
     #endregion
 
+    void Start()
+    {
+        AudioManager.instance.Play("Theme");
+    }
+
     void Update()
     {
         //Refer to AudioLerp() function below for further details

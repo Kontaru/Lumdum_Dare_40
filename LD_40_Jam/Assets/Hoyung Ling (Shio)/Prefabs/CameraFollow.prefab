@@ -64,14 +64,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025597995334792}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.764389, y: 0, z: 13.460001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.3420201, z: -0, w: 0.9396927}
+  m_LocalPosition: {x: -60.33, y: 13.908752, z: 99.99}
+  m_LocalScale: {x: 1.3960207, y: 1, z: 1.3960207}
   m_Children:
   - {fileID: 4220884670573316}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 40, z: 0}
 --- !u!20 &20771915038460710
 Camera:
   m_ObjectHideFlags: 1
@@ -129,7 +129,7 @@ MonoBehaviour:
   GO_Player: {fileID: 0}
   otherLook: {fileID: 0}
   smoothSpeed: 2
-  playerfollowSmoothSpeed: 10
+  playerfollowSmoothSpeed: 11
 --- !u!124 &124678450650159074
 Behaviour:
   m_ObjectHideFlags: 1

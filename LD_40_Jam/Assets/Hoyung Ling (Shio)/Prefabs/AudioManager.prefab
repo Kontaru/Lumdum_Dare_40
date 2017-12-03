@@ -55,10 +55,10 @@ MonoBehaviour:
   - name: Theme
     description: 
     source: {fileID: 0}
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
+    clip: {fileID: 8300000, guid: ca6137702fe2388499862c367ee8d749, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
     Fade: 0
     fadeDuration: 0
     startVol: 0
