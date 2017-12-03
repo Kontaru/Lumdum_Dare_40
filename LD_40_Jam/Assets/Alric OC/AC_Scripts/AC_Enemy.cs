@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof (UnityEngine.AI.NavMeshAgent))]
-public class AC_Enemy : AC_Living 
+[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
+public class AC_Enemy : AC_Living
 {
     public enum State { Idle, Chasing, Attacking, Roam, Search };
     State currentState;
@@ -18,7 +18,7 @@ public class AC_Enemy : AC_Living
     UnityEngine.AI.NavMeshAgent pathfinder;
     Transform target;
     AC_Living targetEntity;
-    
+
     AC_Player player;
     Material skinMaterial;
 
@@ -39,8 +39,8 @@ public class AC_Enemy : AC_Living
     public GameObject GO_Billboard;
     EnemyBillboard EB_Sprite;
 
-	// Use this for initialization
-	protected override void Start () 
+    // Use this for initialization
+    protected override void Start()
     {
         base.Start();
 
@@ -66,20 +66,18 @@ public class AC_Enemy : AC_Living
             myCollisionRadius = GetComponent<CapsuleCollider>().radius;
             targetCollisionRadius = target.GetComponent<CapsuleCollider>().radius;
 
-            InvokeRepeating("Chase",.1F,.1F);
+            InvokeRepeating("Chase", .1F, .1F);
         }
-        if (GameObject.FindGameObjectWithTag("Noise") != null)
-        {
-            heardTarget = true;
+        //if (GameObject.FindGameObjectWithTag("Noise") != null)
+        //{
+        //    target = GameObject.FindGameObjectWithTag("Player").transform;
+        //    targetEntity = target.GetComponent<AC_Living>();
 
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-            targetEntity = target.GetComponent<AC_Living>();
+        //    myCollisionRadius = GetComponent<CapsuleCollider>().radius;
+        //    targetCollisionRadius = target.GetComponent<CapsuleCollider>().radius;
 
-            myCollisionRadius = GetComponent<CapsuleCollider>().radius;
-            targetCollisionRadius = target.GetComponent<CapsuleCollider>().radius;
-
-            InvokeRepeating("Search", .1F, .1F);
-        }
+        //    InvokeRepeating("Search", .1F, .1F);
+        //}
         GotoNextPoint();
     }
 
@@ -147,14 +145,14 @@ public class AC_Enemy : AC_Living
         skinMaterial.color = Color.red;
         bool hasAppliedDamage = false;
 
-        while (percent <=1)
+        while (percent <= 1)
         {
             if (percent >= .5f && !hasAppliedDamage)
             {
                 hasAppliedDamage = true;
             }
             percent += Time.deltaTime * attackSpeed;
-            float interpolation = (-Mathf.Pow(percent,2) + percent) * 4;
+            float interpolation = (-Mathf.Pow(percent, 2) + percent) * 4;
             transform.position = Vector3.Lerp(originalPositon, attackPosition, interpolation);
 
             yield return null;
@@ -171,14 +169,14 @@ public class AC_Enemy : AC_Living
             if (currentState == State.Chasing)
             {
                 Vector3 dirToTarget = (target.position - transform.position).normalized;
-                Vector3 targetPosition = target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold/2);
+                Vector3 targetPosition = target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold / 2);
 
                 if (!dead)
                 {
                     pathfinder.speed = mFL_moveSpeed * 1.5f;
                     pathfinder.SetDestination(targetPosition);
                 }
-            } 
+            }
         }
     }
     void GotoNextPoint()
@@ -187,7 +185,7 @@ public class AC_Enemy : AC_Living
 
         if (currentState == State.Roam)
         {
-           
+
             if (points.Length == 0)
             {
                 return;
@@ -198,19 +196,39 @@ public class AC_Enemy : AC_Living
             destPoint = (destPoint + 1) % points.Length;
         }
     }
-    void Search()
+    //void Search()
+    //{
+    //    if (heardTarget == true)
+    //    {
+    //        if (currentState == State.Search)
+    //        {
+    //            Vector3 dirToTarget = (target.position - transform.position).normalized;
+    //            Vector3 targetPosition = target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold / 2);
+
+    //            if (!dead)
+    //            {
+    //                pathfinder.speed = mFL_moveSpeed * 0.8f;
+    //                pathfinder.SetDestination(targetPosition);
+    //            }
+    //        }
+    //    }
+    //}
+    private void OnCollisionEnter(Collision collision)
     {
-        if (heardTarget == true)
+        heardTarget = true;
+        if (collision.gameObject.name == "Noise_Sphere")
         {
             if (currentState == State.Search)
             {
-                Vector3 dirToTarget = (target.position - transform.position).normalized;
-                Vector3 targetPosition = target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold / 2);
-
-                if (!dead)
                 {
-                    pathfinder.speed = mFL_moveSpeed * 0.8f;
-                    pathfinder.SetDestination(targetPosition);
+                    Vector3 dirToTarget = (target.position - transform.position).normalized;
+                    Vector3 targetPosition = target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold / 2);
+
+                    if (!dead)
+                    {
+                        pathfinder.speed = mFL_moveSpeed * 0.8f;
+                        pathfinder.SetDestination(targetPosition);
+                    }
                 }
             }
         }
