@@ -118,10 +118,10 @@ public class AC_Enemy : AC_Living
             {
                 EB_Sprite.BL_Spotted = false;
             }
-            if (heardTarget == true)
-            {
-                currentState = State.Search;
-            }
+        }
+        else if (heardTarget == true)
+        {
+            currentState = State.Search;
         }
         /*if (player.currentState == AC_Player.State.Attack)
         {

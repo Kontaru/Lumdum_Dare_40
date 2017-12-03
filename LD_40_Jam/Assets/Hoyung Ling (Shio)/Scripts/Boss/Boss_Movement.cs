@@ -21,18 +21,25 @@ public class Boss_Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Vector3.Distance(Target.transform.position, transform.position) < 0.3f)
+        if (Vector3.Distance(Target.transform.position, transform.position) < 3.0f)
             BL_Alerted = true;
 
         if(BL_Alerted)
         {
-            RunFrom();
+            if (Vector3.Distance(Target.transform.position, transform.position) < 5.0f)
+                RunFrom();
+            else if (Vector3.Distance(Target.transform.position, transform.position) >= 5.0f)
+                ChaseTo();
         }
 	}
 
+    public void ChaseTo()
+    {
+        enemy.destination = Target.transform.position;
+    }
+
     public void RunFrom()
     {
-
         // store the starting transform
         startTransform = transform;
 
