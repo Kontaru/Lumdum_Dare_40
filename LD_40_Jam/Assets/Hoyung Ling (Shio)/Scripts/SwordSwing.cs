@@ -12,7 +12,7 @@ public class SwordSwing : MonoBehaviour {
         {
             coll.gameObject.SendMessage("TakeDamage", 1, SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
-        }else if (coll.gameObject != null && BL_BelongsToEnemy)
+        }else if (coll.gameObject != null && coll.gameObject.tag == "Player" && BL_BelongsToEnemy)
         {
             coll.gameObject.SendMessage("TakeDamage", 1, SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
