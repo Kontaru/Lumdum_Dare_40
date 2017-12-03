@@ -22,7 +22,6 @@ public class AC_Living : MonoBehaviour, IDamageable
     public virtual void TakeDamage(float damage)
     {
         health -= damage;
-        AudioManager.instance.Play("Enemy Take Hit");
 
         if (health <= 0 && !dead)
         {
