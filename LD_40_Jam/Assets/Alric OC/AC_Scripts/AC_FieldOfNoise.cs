@@ -13,7 +13,7 @@ public class AC_FieldOfNoise : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask obstacleMask;
 
-    [HideInInspector]
+    //[HideInInspector]
     public List<Transform> VisibleTargets = new List<Transform>();
 
     public float meshResolution;
