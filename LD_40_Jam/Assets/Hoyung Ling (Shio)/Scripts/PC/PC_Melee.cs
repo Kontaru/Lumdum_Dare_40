@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PC_Melee : MonoBehaviour {
 
+    public GameObject Sword_Sprite;
     public int swings;
     public KeyCode KC_Attack;
     int IN_Swings = 3;
@@ -26,12 +27,20 @@ public class PC_Melee : MonoBehaviour {
     void Attack()
     {
         IN_Swings--;
+        Sword_Sprite.SetActive(false);
+        StartCoroutine(SwordSpriteAnimator());
         Instantiate(GO_MeleeCast, transform.position + new Vector3(0, 1, 0), transform.rotation);
         if (IN_Swings == 0)
         {
             BL_Staggered = true;
             StartCoroutine(AttackSwingReset());
         }
+    }
+
+    IEnumerator SwordSpriteAnimator()
+    {
+        yield return new WaitForSeconds(0.21f);
+        Sword_Sprite.SetActive(true);
     }
 
     IEnumerator AttackSwingReset()

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4479402782267208}
   - component: {fileID: 212516599162780644}
   m_Layer: 8
-  m_Name: New Sprite
+  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbf88733a1457545be157db3e86b9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sword_Sprite: {fileID: 1294790076225828}
   swings: 3
   KC_Attack: 323
   BL_Staggered: 0
