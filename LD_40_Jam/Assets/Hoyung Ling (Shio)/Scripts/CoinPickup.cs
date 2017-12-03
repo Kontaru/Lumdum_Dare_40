@@ -8,6 +8,7 @@ public class CoinPickup : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Player")
         {
+            AudioManager.instance.Play("Coin Pickup");
             coll.gameObject.SendMessage("TakeCoin", 1, SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
         }

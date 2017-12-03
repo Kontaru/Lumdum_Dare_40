@@ -16,5 +16,7 @@ public class PC_Health : MonoBehaviour {
     void TakeDamage(int damage)
     {
         health -= damage;
+        AudioManager.instance.Play("Player Take Hit");
+        AudioManager.instance.Play("Impact Noise 1");
     }
 }

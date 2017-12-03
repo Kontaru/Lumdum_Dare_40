@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Theme
-    description: 
+    description: Theme when the game starts
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: ca6137702fe2388499862c367ee8d749, type: 3}
     volume: 1
@@ -74,7 +74,7 @@ MonoBehaviour:
     fadeTime: 0
     fadeStartTime: 0
   - name: Player Slash
-    description: 
+    description: Player strike
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: d076a47abcc81ef43970e0e78ea5147b, type: 3}
     volume: 1
@@ -95,7 +95,7 @@ MonoBehaviour:
     fadeTime: 0
     fadeStartTime: 0
   - name: Footsteps
-    description: 
+    description: Normal player movement
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: fc8c04aa59ba88b48be0c211a5ed422f, type: 3}
     volume: 1
@@ -116,7 +116,7 @@ MonoBehaviour:
     fadeTime: 0
     fadeStartTime: 0
   - name: Slow Footsteps
-    description: 
+    description: When player is staggered, slower footsteps
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: 839f0d45e423ebd4ca8fcd1f914f25f0, type: 3}
     volume: 1
@@ -137,7 +137,7 @@ MonoBehaviour:
     fadeTime: 0
     fadeStartTime: 0
   - name: Player Dash
-    description: 
+    description: Player dashes (about 0.3s)
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: c7cacce65b724fa44962370ae3220981, type: 3}
     volume: 1
@@ -147,6 +147,111 @@ MonoBehaviour:
     fadeDuration: 0
     startVol: 0
     endVol: 0
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: Coin Pickup
+    description: Sound that plays when player picks up a coin
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: ba0d2245edf942842b83a97655d72374, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 0
+    endVol: 0
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: Player Take Hit
+    description: Player takes a hit
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 227a2c13b170f2b49be38e66acbfbfb5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 0
+    endVol: 0
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: Enemy Take Hit
+    description: Enemy takes a hit
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 07ba93cec97f59a46ae60a30ca94d960, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 0
+    endVol: 0
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: Impact Noise 1
+    description: The sound of metal hitting steel
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 9692d128920b1d248b121c2ab3ddcb2d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 1
+    endVol: 1
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: Impact Noise 2
+    description: The sound of metal hitting leather
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: c7cacce65b724fa44962370ae3220981, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    Fade: 0
+    fadeDuration: 0
+    startVol: 1
+    endVol: 1
     useGraph: 0
     AC:
       serializedVersion: 2
