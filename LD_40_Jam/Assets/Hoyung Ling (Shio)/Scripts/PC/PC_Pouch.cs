@@ -7,14 +7,15 @@ public class PC_Pouch : MonoBehaviour {
 
     //Coin animation
     public Image coinGraphic;
-    float timeOfTravel = 1; //time after object reach a target place 
+    float timeOfTravel = 0.2f; //time after object reach a target place 
     float currentTime = 0; // actual floting time 
     float timeinterval = 0;
+
     bool BL_Animate;
     bool BL_Increase;
 
-    public Vector3 startPos;
-    public Vector3 endPos;
+    Vector3 startPos;
+    Vector3 endPos;
 
     RectTransform myCoin = new RectTransform();
     public int coins;
@@ -23,7 +24,7 @@ public class PC_Pouch : MonoBehaviour {
 	void Start () {
         myCoin = coinGraphic.GetComponent<RectTransform>();
         startPos = myCoin.anchoredPosition;
-        endPos = myCoin.anchoredPosition + new Vector2(0, 100);
+        endPos = myCoin.anchoredPosition + new Vector2(0, 150);
     }
 	
 	// Update is called once per frame
@@ -48,9 +49,9 @@ public class PC_Pouch : MonoBehaviour {
             else
                 currentTime -= Time.deltaTime;
 
-            timeinterval = currentTime / timeOfTravel; // we normalize our time 
+            timeinterval = currentTime / timeOfTravel;
 
-            if (timeinterval > 1)
+            if (timeinterval >= 1)
                 BL_Increase = !BL_Increase;
 
             if (timeinterval <= 0)
