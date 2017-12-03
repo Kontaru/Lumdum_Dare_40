@@ -8,6 +8,7 @@ public class AC_Enemy : AC_Living
     State currentState;
 
     AC_FieldOfView fieldOfView;
+    AC_FieldOfNoise fieldOfNoise;
 
     public GameObject deathEffect;
     public Transform[] points;
@@ -68,16 +69,6 @@ public class AC_Enemy : AC_Living
 
             InvokeRepeating("Chase", .1F, .1F);
         }
-        //if (GameObject.FindGameObjectWithTag("Noise") != null)
-        //{
-        //    target = GameObject.FindGameObjectWithTag("Player").transform;
-        //    targetEntity = target.GetComponent<AC_Living>();
-
-        //    myCollisionRadius = GetComponent<CapsuleCollider>().radius;
-        //    targetCollisionRadius = target.GetComponent<CapsuleCollider>().radius;
-
-        //    InvokeRepeating("Search", .1F, .1F);
-        //}
         GotoNextPoint();
     }
 
@@ -85,7 +76,7 @@ public class AC_Enemy : AC_Living
     // Update is called once per frame
     void Update()
     {
-        if (fieldOfView.withinchasingrange == true)
+        if (fieldOfView.withinchasingrange == true || fieldOfNoise.withinsearchrange == true)
         {
             if (Time.time > nextAttackTime)
             {
@@ -109,7 +100,7 @@ public class AC_Enemy : AC_Living
     {
         if (currentState == State.Roam)
         {
-            if (fieldOfView.withinchasingrange == true)
+            if (fieldOfView.withinchasingrange == true || fieldOfNoise.withinsearchrange == true)
             {
                 EB_Sprite.BL_Spotted = true;
                 currentState = State.Chasing;
@@ -118,10 +109,6 @@ public class AC_Enemy : AC_Living
             {
                 EB_Sprite.BL_Spotted = false;
             }
-        }
-        else if (heardTarget == true)
-        {
-            currentState = State.Search;
         }
         /*if (player.currentState == AC_Player.State.Attack)
         {
@@ -164,7 +151,7 @@ public class AC_Enemy : AC_Living
     }
     void Chase()
     {
-        if (fieldOfView.withinchasingrange == true)
+        if (fieldOfView.withinchasingrange == true || fieldOfNoise.withinsearchrange == true)
         {
             if (currentState == State.Chasing)
             {
@@ -194,43 +181,6 @@ public class AC_Enemy : AC_Living
             pathfinder.destination = points[destPoint].position;
 
             destPoint = (destPoint + 1) % points.Length;
-        }
-    }
-    //void Search()
-    //{
-    //    if (heardTarget == true)
-    //    {
-    //        if (currentState == State.Search)
-    //        {
-    //            Vector3 dirToTarget = (target.position - transform.position).normalized;
-    //            Vector3 targetPosition = target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold / 2);
-
-    //            if (!dead)
-    //            {
-    //                pathfinder.speed = mFL_moveSpeed * 0.8f;
-    //                pathfinder.SetDestination(targetPosition);
-    //            }
-    //        }
-    //    }
-    //}
-    private void OnCollisionEnter(Collision collision)
-    {
-        heardTarget = true;
-        if (collision.gameObject.name == "Noise_Sphere")
-        {
-            if (currentState == State.Search)
-            {
-                {
-                    Vector3 dirToTarget = (target.position - transform.position).normalized;
-                    Vector3 targetPosition = target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold / 2);
-
-                    if (!dead)
-                    {
-                        pathfinder.speed = mFL_moveSpeed * 0.8f;
-                        pathfinder.SetDestination(targetPosition);
-                    }
-                }
-            }
         }
     }
 }

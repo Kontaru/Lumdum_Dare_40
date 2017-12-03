@@ -31,6 +31,7 @@ GameObject:
   - component: {fileID: 11494272}
   - component: {fileID: 19554194}
   - component: {fileID: 11412058}
+  - component: {fileID: 114730229443157018}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -187,6 +188,7 @@ MonoBehaviour:
   health: 0
   deathEffect: {fileID: 194702, guid: ba328c08808732344ba5e2b1c5d19f30, type: 2}
   points: []
+  heardTarget: 0
   GO_Billboard: {fileID: 0}
 --- !u!136 &13695578
 CapsuleCollider:
@@ -253,3 +255,28 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194240}
   m_IsPrefabParent: 1
+--- !u!114 &114730229443157018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9637aa5234e827d4c99daaf4f8883f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 0
+  viewAngle: 0
+  withinsearchrange: 0
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
+  VisibleTargets: []
+  meshResolution: 0
+  edgeResolve: 0
+  edgeDstThreshold: 0
+  soundMeshFilter: {fileID: 0}
