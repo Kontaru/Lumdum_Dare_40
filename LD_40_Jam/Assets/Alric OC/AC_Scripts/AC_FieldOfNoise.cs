@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AC_FieldOfNoise : MonoBehaviour
 {
-    public float viewRadius;
+    public float viewRadius = 10;
+    public static float temp_viewRadius;
     [Range(0, 360)]
     public float viewAngle;
     public bool withinsearchrange = false;
@@ -24,6 +25,7 @@ public class AC_FieldOfNoise : MonoBehaviour
 
     void Start()
     {
+        temp_viewRadius = viewRadius;
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
@@ -42,6 +44,8 @@ public class AC_FieldOfNoise : MonoBehaviour
 
     void LateUpdate()
     {
+        //HYL Stuff
+        viewRadius = temp_viewRadius;
         DrawFieldOfView();
     }
 

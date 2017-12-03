@@ -26,7 +26,6 @@ public class Boss_Health : MonoBehaviour {
     void TakeDamage(int damage)
     {
         health -= damage;
-
         if (health > 6 && health <= 16)
             CurrentState = State.Phase1;
         else if (health <= 6 && health > 0)
