@@ -139,7 +139,7 @@ MonoBehaviour:
   - name: Player Dash
     description: Player dashes (about 0.3s)
     source: {fileID: 0}
-    clip: {fileID: 8300000, guid: c7cacce65b724fa44962370ae3220981, type: 3}
+    clip: {fileID: 8300000, guid: 4a8cc9ae44194c04988c09e927928dfe, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
