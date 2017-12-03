@@ -118,7 +118,7 @@ MonoBehaviour:
   - name: Slow Footsteps
     description: When player is staggered, slower footsteps
     source: {fileID: 0}
-    clip: {fileID: 8300000, guid: 839f0d45e423ebd4ca8fcd1f914f25f0, type: 3}
+    clip: {fileID: 8300000, guid: 084923340289056468ac469e61342238, type: 3}
     volume: 0.5
     pitch: 1
     loop: 1
