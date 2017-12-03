@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent (typeof (UnityEngine.AI.NavMeshAgent))]
 public class AC_Enemy : AC_Living 
 {
-    public enum State { Idle, Chasing, Attacking, Roam };
+    public enum State { Idle, Chasing, Attacking, Roam, Search };
     State currentState;
 
     AC_FieldOfView fieldOfView;
@@ -33,6 +33,7 @@ public class AC_Enemy : AC_Living
     float targetCollisionRadius;
 
     bool hasTarget;
+    public bool heardTarget;
 
     //-----------------------------------------------------------
     public GameObject GO_Billboard;
@@ -67,12 +68,23 @@ public class AC_Enemy : AC_Living
 
             InvokeRepeating("Chase",.1F,.1F);
         }
+        if (GameObject.FindGameObjectWithTag("Noise") != null)
+        {
+            heardTarget = true;
 
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+            targetEntity = target.GetComponent<AC_Living>();
+
+            myCollisionRadius = GetComponent<CapsuleCollider>().radius;
+            targetCollisionRadius = target.GetComponent<CapsuleCollider>().radius;
+
+            InvokeRepeating("Search", .1F, .1F);
+        }
         GotoNextPoint();
-	}
+    }
 
-	
-	// Update is called once per frame
+
+    // Update is called once per frame
     void Update()
     {
         if (fieldOfView.withinchasingrange == true)
@@ -105,7 +117,13 @@ public class AC_Enemy : AC_Living
                 currentState = State.Chasing;
             }
             else
+            {
                 EB_Sprite.BL_Spotted = false;
+            }
+            if (heardTarget == true)
+            {
+                currentState = State.Search;
+            }
         }
         /*if (player.currentState == AC_Player.State.Attack)
         {
@@ -178,6 +196,23 @@ public class AC_Enemy : AC_Living
             pathfinder.destination = points[destPoint].position;
 
             destPoint = (destPoint + 1) % points.Length;
+        }
+    }
+    void Search()
+    {
+        if (heardTarget == true)
+        {
+            if (currentState == State.Search)
+            {
+                Vector3 dirToTarget = (target.position - transform.position).normalized;
+                Vector3 targetPosition = target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold / 2);
+
+                if (!dead)
+                {
+                    pathfinder.speed = mFL_moveSpeed * 0.8f;
+                    pathfinder.SetDestination(targetPosition);
+                }
+            }
         }
     }
 }
