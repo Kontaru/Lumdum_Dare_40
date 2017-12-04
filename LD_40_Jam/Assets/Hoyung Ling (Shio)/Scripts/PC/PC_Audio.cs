@@ -25,6 +25,7 @@ public class PC_Audio : MonoBehaviour {
             {
                 AudioManager.instance.Play("Slow Footsteps");
                 AudioManager.instance.Stop("Footsteps");
+                AudioManager.instance.Stop("Coin Rustle");
                 sound_Stagger = false;
                 sound_Move = true;
             }
@@ -33,6 +34,7 @@ public class PC_Audio : MonoBehaviour {
             if (sound_Move && CC_Controller.BL_Staggered == false)
             {
                 AudioManager.instance.Play("Footsteps");
+                AudioManager.instance.Play("Coin Rustle");
                 AudioManager.instance.Stop("Slow Footsteps");
                 sound_Move = false;
                 sound_Stagger = true;
@@ -43,6 +45,7 @@ public class PC_Audio : MonoBehaviour {
             sound_Stagger = true;
             AudioManager.instance.Stop("Footsteps");
             AudioManager.instance.Stop("Slow Footsteps");
+            AudioManager.instance.Play("Coin Rustle");
         }
     }
 }

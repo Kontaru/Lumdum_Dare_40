@@ -63,9 +63,9 @@ public class Boss_Movement : MonoBehaviour {
             }
             else
             {
-                if (Vector3.Distance(Target.transform.position, transform.position) < 10.0f)
+                if (Vector3.Distance(Target.transform.position, transform.position) < 6.0f)
                     RunFrom();
-                else if (Vector3.Distance(Target.transform.position, transform.position) >= 10.0f)
+                else if (Vector3.Distance(Target.transform.position, transform.position) >= 6.0f)
                     ChaseTo();
             }
         }

@@ -451,3 +451,24 @@ MonoBehaviour:
     wasFading: 0
     fadeTime: 0
     fadeStartTime: 0
+  - name: Coin Rustle
+    description: Win tune
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 2fedf335f1f30f647a06a42acc180584, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    Fade: 0
+    fadeDuration: 0
+    startVol: 0
+    endVol: 0.5
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0

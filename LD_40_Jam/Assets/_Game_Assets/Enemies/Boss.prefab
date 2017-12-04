@@ -668,7 +668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sword_Lunge: {fileID: 1946002786528638}
   PF_Bullet: {fileID: 1043073823848002, guid: 9cffbfe3fb5f5b94dbb35e309c4827d5, type: 2}
-  PF_Lunge: {fileID: 1823728772266120, guid: c1d4d172d5f22df45a0bea0b379e5da4, type: 2}
+  PF_Lunge: {fileID: 1225555870896548, guid: da8563e03c533e4458a2125be450432f, type: 2}
   GO_EjectionPoint: {fileID: 1126179370798990}
   BL_Target: 0
 --- !u!136 &136425005162626122

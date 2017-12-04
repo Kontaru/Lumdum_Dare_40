@@ -412,7 +412,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 299485220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 108, y: 130, z: 0}
+  m_LocalPosition: {x: -387.5, y: 408.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1765922152}
@@ -548,7 +548,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 518219019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 187, y: 0, z: 0}
+  m_LocalPosition: {x: -308.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1534298293}
@@ -1124,7 +1124,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 875153843}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -325.00012, y: 0, z: 0.50000757}
+  m_LocalPosition: {x: 170.49988, y: 0, z: 0.50000757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2119051766}
@@ -1564,7 +1564,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1364624140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 108, y: 130, z: 0}
+  m_LocalPosition: {x: -387.5, y: 408.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 647098945}
@@ -2118,7 +2118,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1559201867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 658, y: 370, z: 0}
+  m_LocalPosition: {x: 162.5, y: 91.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1985614533}
@@ -2631,7 +2631,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1708443445}
   m_LocalRotation: {x: -0, y: -0, z: 0.04015033, w: 0.99919367}
-  m_LocalPosition: {x: 586, y: 299, z: 0}
+  m_LocalPosition: {x: 90.5, y: 20.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1559201871}
@@ -3090,6 +3090,7 @@ MonoBehaviour:
   - Boss Music
   - Footsteps
   - Slow Footsteps
+  - Coin Rustle
 --- !u!114 &2005763503
 MonoBehaviour:
   m_ObjectHideFlags: 0

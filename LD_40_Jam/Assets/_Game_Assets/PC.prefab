@@ -242,7 +242,7 @@ MonoBehaviour:
   swings: 3
   KC_Attack: 323
   BL_Staggered: 0
-  GO_MeleeCast: {fileID: 1216307190240754, guid: bc2a3e3ed17951a488bfc02ef73e1d09,
+  GO_MeleeCast: {fileID: 1710536149547702, guid: bc2a3e3ed17951a488bfc02ef73e1d09,
     type: 2}
   Delay: 3
 --- !u!114 &114208868680704566
