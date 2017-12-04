@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class Boss_Movement : MonoBehaviour {
 
+    [Header("Direction")]
+    public Transform Left;
+    public Transform Right;
+    public Transform Behind;
+
     //Dashes
+    [Header("Dash Variables")]
     bool BL_Dash = false;
     public float FL_moveSpeed;
     float FL_defaultSpeed;
@@ -51,7 +57,11 @@ public class Boss_Movement : MonoBehaviour {
             }*/
 
             if (Vector3.Distance(Target.transform.position, transform.position) < 10.0f)
-                RunFrom();
+            {
+                enemy.destination = Behind.position;
+                enemy.speed = 5.0f;
+            }
+            //RunFrom();
             else if (Vector3.Distance(Target.transform.position, transform.position) >= 10.0f)
                 ChaseTo();
         }
