@@ -56,7 +56,6 @@ public class AC_Enemy : AC_Living
         fieldOfNoise = GetComponent<AC_FieldOfNoise>();
         mFL_moveSpeed = pathfinder.speed;
         player = GetComponent<AC_Player>();
-        fieldOfNoise.withinsearchrange = false;
         //desiredVelocity = pathfinder.speed * 5;
 
         pathfinder.autoBraking = false;

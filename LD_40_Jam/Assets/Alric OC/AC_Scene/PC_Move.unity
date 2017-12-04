@@ -301,6 +301,11 @@ Prefab:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114521139646572600, guid: ec954ae11fbff48409dd3595c96b5378,
+        type: 2}
+      propertyPath: viewMeshFilter
+      value: 
+      objectReference: {fileID: 400690680}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec954ae11fbff48409dd3595c96b5378, type: 2}
   m_IsPrefabParent: 0
@@ -413,6 +418,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadePlane: {fileID: 1348414437}
   gameOverUI: {fileID: 1565366122}
+--- !u!33 &400690680 stripped
+MeshFilter:
+  m_PrefabParentObject: {fileID: 3354300, guid: ec954ae11fbff48409dd3595c96b5378,
+    type: 2}
+  m_PrefabInternal: {fileID: 157398681}
 --- !u!1001 &482822191
 Prefab:
   m_ObjectHideFlags: 0
