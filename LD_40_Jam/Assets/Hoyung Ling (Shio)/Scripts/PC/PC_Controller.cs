@@ -22,6 +22,7 @@ public class PC_Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         BL_IsMoving = CC_Move.BL_Moving;
         if (CC_Melee.BL_Staggered == true)
         {

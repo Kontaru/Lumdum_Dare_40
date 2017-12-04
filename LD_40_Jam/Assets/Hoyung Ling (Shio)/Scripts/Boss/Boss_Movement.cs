@@ -31,7 +31,7 @@ public class Boss_Movement : MonoBehaviour {
     Vector3 direction;
     Vector3 moveInput;
 
-    public GameObject Target;
+    public static GameObject Target;
     public bool BL_Alerted = false;
 
 	// Use this for initialization
