@@ -32,7 +32,7 @@ public class PC_Pouch : MonoBehaviour {
         coins += value;
 
         //HYL stuff
-        AC_FieldOfNoise.temp_viewRadius += 0.1f;
+        AC_FieldOfNoise.temp_viewRadius += 0.2f;
         BL_Animate = true;
         BL_Increase = true;
         StartCoroutine(CoinAnimation());

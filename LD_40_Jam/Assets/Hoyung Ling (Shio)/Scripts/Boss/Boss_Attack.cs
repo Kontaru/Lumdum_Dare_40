@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss_Attack : MonoBehaviour {
 
+    public GameObject Sword_Lunge;
     public GameObject PF_Bullet;
     public GameObject PF_Lunge;
     public GameObject GO_EjectionPoint;
@@ -12,6 +13,10 @@ public class Boss_Attack : MonoBehaviour {
     private float FL_Shoot = 0;             //The value which Time.time compares itself to to know when to shoot
     protected float FL_CoolDown = 3f;       //Value added to Time.time which creates FL_Shoot, to determine the space between shoots
 
+    private float FL_Lunge = 0;             //The value which Time.time compares itself to to know when to shoot
+    protected float FL_LungeCoolDown = 5f;
+    bool BL_LungeAnimator = false;
+
     // Use this for initialization
     void Start () {
 		
@@ -19,17 +24,48 @@ public class Boss_Attack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         FireAtPC();
+        LungeAtPC();
+
 	}
 
     #region --- Spawn Lunge ---
 
     void SpawnLunge()
     {
+        Sword_Lunge.SetActive(false);
+        if (!BL_LungeAnimator)
+        {
+            StartCoroutine(SwordSpriteAnimator());
+            BL_LungeAnimator = true;
+        }
         Instantiate(PF_Lunge, GO_EjectionPoint.transform.position, GO_EjectionPoint.transform.rotation);
     }
 
     #endregion
+
+    #region --- Begin Lunging ---
+
+    void LungeAtPC()
+    {
+        if (BL_Target)                                                                                              //If we're allowed to target
+        {
+            if (Time.time > FL_Lunge)                                                                               //If the time is right...
+            {
+                SpawnLunge();                                                                                   //Spawn a bullet
+                FL_Lunge = Time.time + FL_LungeCoolDown;                                                                 //Add a cooldown
+            }
+        }
+    }
+    #endregion
+
+    IEnumerator SwordSpriteAnimator()
+    {
+        yield return new WaitForSeconds(0.21f);
+        BL_LungeAnimator = false;
+        Sword_Lunge.SetActive(true);
+    }
 
     #region --- Spawn Bullet ---
 

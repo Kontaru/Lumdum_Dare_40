@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordLungeAnimation : MonoBehaviour {
+public class SwordLunge : MonoBehaviour {
 
     void OnTriggerEnter(Collider coll)
     {
@@ -15,7 +15,7 @@ public class SwordLungeAnimation : MonoBehaviour {
 
     void Start()
     {
-        AudioManager.instance.Play("BossDamage");
+        AudioManager.instance.Play("Player Slash");
     }
 
     void Update()
