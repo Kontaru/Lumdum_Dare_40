@@ -18,7 +18,8 @@ public class AC_Enemy : AC_Living
 
     UnityEngine.AI.NavMeshAgent pathfinder;
     Transform target;
-    AC_Living targetEntity;
+    //AC_Living targetEntity;
+
 
     AC_Player player;
     Material skinMaterial;
@@ -37,10 +38,16 @@ public class AC_Enemy : AC_Living
     bool hasTarget;
     bool BL_Moving;
 
+    //HYL STUFF
+    public GameObject PF_Slash;
+    public GameObject GO_Billboard;
+    EnemyBillboard EB_Sprite;
+
     // Use this for initialization
     protected override void Start()
     {
         base.Start();
+        EB_Sprite = GO_Billboard.GetComponent<EnemyBillboard>();
         pathfinder = GetComponent<UnityEngine.AI.NavMeshAgent>();
         skinMaterial = GetComponent<Renderer>().material;
         originalColour = skinMaterial.color;
@@ -59,8 +66,8 @@ public class AC_Enemy : AC_Living
             hasTarget = true;
 
             target = GameObject.FindGameObjectWithTag("Player").transform;
-            targetEntity = target.GetComponent<AC_Living>();
-            targetEntity.OnDeath += OnTargetDeath;
+            //targetEntity = target.GetComponent<AC_Living>();
+            //targetEntity.OnDeath += OnTargetDeath;
 
             myCollisionRadius = GetComponent<CapsuleCollider>().radius;
             targetCollisionRadius = target.GetComponent<CapsuleCollider>().radius;
@@ -126,16 +133,19 @@ public class AC_Enemy : AC_Living
             if (fieldOfView.withinchasingrange == true)
             {
                 currentState = State.Chasing;
+                EB_Sprite.BL_Spotted = true;
                 fieldOfNoise.withinsearchrange = false;
             }
             if (fieldOfView.withinchasingrange == false)
             {
                 if (fieldOfNoise.withinsearchrange == true && BL_Moving == true)
                 {
+                    EB_Sprite.BL_Spotted = true;
                     currentState = State.Searching;
                 }
                 else
                 {
+                    EB_Sprite.BL_Spotted = false;
                     currentState = State.Roam;
                 }
             }
@@ -167,7 +177,8 @@ public class AC_Enemy : AC_Living
             if (percent >= .5f && !hasAppliedDamage)
             {
                 hasAppliedDamage = true;
-                targetEntity.TakeDamage(damage);
+                //targetEntity.TakeDamage(damage);
+                Instantiate(PF_Slash, transform.position + new Vector3(0, 1, 0), transform.rotation);
             }
             percent += Time.deltaTime * attackSpeed;
             float interpolation = (-Mathf.Pow(percent, 2) + percent) * 4;

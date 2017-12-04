@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473b2e9fde48b724bb9a7199947bdfbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BL_BelongsToEnemy: 0
+  BL_BelongsToEnemy: 1
 --- !u!212 &212334737087983650
 SpriteRenderer:
   m_ObjectHideFlags: 1
