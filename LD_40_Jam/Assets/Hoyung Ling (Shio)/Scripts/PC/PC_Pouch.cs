@@ -24,7 +24,7 @@ public class PC_Pouch : MonoBehaviour {
 	void Start () {
         myCoin = coinGraphic.GetComponent<RectTransform>();
         startPos = myCoin.anchoredPosition;
-        endPos = myCoin.anchoredPosition + new Vector2(0, 150);
+        endPos = myCoin.anchoredPosition + new Vector2(0, 100);
     }
 
     void TakeCoin(int value)

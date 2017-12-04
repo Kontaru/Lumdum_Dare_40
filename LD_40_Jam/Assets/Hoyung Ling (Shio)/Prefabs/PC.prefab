@@ -105,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1758051654850700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.43, y: 0, z: -9.9}
+  m_LocalPosition: {x: -59.9, y: 0.44, z: 86.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4479402782267208}
@@ -256,7 +256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinGraphic: {fileID: 0}
-  coins: 0
 --- !u!114 &114227929388731444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7fb641c4a708e47aee45040711f901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadindex: 0
   health: 4
 --- !u!114 &114799228656597210
 MonoBehaviour:
@@ -297,7 +297,7 @@ MonoBehaviour:
   KC_Dash: 32
   BL_Moving: 1
   BL_Staggered: 0
-  FL_moveSpeed: 5
+  FL_moveSpeed: 10
 --- !u!114 &114955430897561276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -330,7 +330,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1758051654850700}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
