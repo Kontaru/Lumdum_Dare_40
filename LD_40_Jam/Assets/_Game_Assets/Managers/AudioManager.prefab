@@ -328,7 +328,7 @@ MonoBehaviour:
   - name: Heal
     description: Heal sound
     source: {fileID: 0}
-    clip: {fileID: 8300000, guid: 4a8cc9ae44194c04988c09e927928dfe, type: 3}
+    clip: {fileID: 8300000, guid: 0fd6b12b5730c9347a966514b15e64a5, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -370,14 +370,35 @@ MonoBehaviour:
   - name: Dungeon Music
     description: Dungeon theme
     source: {fileID: 0}
+    clip: {fileID: 8300000, guid: f9e6761f9e5bd694ea3d62ae0cf81b24, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    Fade: 0
+    fadeDuration: 1
+    startVol: 0.5
+    endVol: 0
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: Boss Music
+    description: Boss Music
+    source: {fileID: 0}
     clip: {fileID: 8300000, guid: 123a717e62f93924c8a64eb490d72b88, type: 3}
     volume: 0.5
     pitch: 1
-    loop: 0
+    loop: 1
     Fade: 0
     fadeDuration: 0
-    startVol: 1
-    endVol: 1
+    startVol: 0
+    endVol: 0.5
     useGraph: 0
     AC:
       serializedVersion: 2

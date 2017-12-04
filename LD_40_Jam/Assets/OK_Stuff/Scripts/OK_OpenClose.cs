@@ -35,6 +35,7 @@ public class OK_OpenClose : MonoBehaviour {
                 mGO_Target.SetActive(false);
             }
 
+            AudioManager.instance.AudioFade("Dungeon Music");
         }
     }
 

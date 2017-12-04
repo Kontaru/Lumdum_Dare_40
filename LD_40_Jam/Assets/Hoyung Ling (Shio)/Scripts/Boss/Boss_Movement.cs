@@ -42,6 +42,7 @@ public class Boss_Movement : MonoBehaviour {
 	void Update () {
         if (!BL_Alerted && Vector3.Distance(Target.transform.position, transform.position) < 3.0f)
         {
+            AudioManager.instance.Play("Boss Music");
             FL_Cooldown = Time.time + FL_Delay;
             BL_Alerted = true;
             BL_Move = true;
