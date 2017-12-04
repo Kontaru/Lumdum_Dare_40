@@ -8,7 +8,7 @@ public class NextLevel : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Player")
         {
-            GameManager.instance.NextScene();
+            GameManager.instance.LoadScene(3);
         }
     }
 }

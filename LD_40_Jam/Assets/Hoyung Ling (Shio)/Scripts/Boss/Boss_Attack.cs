@@ -17,6 +17,8 @@ public class Boss_Attack : MonoBehaviour {
     protected float FL_LungeCoolDown = 5f;
     bool BL_LungeAnimator = false;
 
+    bool BL_Spotted = false;
+
     // Use this for initialization
     void Start () {
 		
@@ -24,6 +26,13 @@ public class Boss_Attack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(BL_Target && !BL_Spotted)
+        {
+            FL_Lunge = Time.time + FL_LungeCoolDown;
+            FL_Shoot = Time.time + FL_CoolDown;
+            BL_Spotted = true;
+        }
 
         FireAtPC();
         LungeAtPC();
