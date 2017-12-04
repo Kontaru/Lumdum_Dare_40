@@ -773,7 +773,7 @@ Prefab:
     - target: {fileID: 224818388080843072, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -40
+      value: -47.5
       objectReference: {fileID: 0}
     - target: {fileID: 224837125621905974, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
@@ -793,7 +793,7 @@ Prefab:
     - target: {fileID: 224817327569213434, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -48
+      value: -47.5
       objectReference: {fileID: 0}
     - target: {fileID: 224765443277591976, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
@@ -813,7 +813,7 @@ Prefab:
     - target: {fileID: 224595781281214060, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 320
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 224536255768527490, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
@@ -833,7 +833,7 @@ Prefab:
     - target: {fileID: 224409697569021864, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -50
+      value: -47.5
       objectReference: {fileID: 0}
     - target: {fileID: 224205497696060100, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
@@ -843,7 +843,7 @@ Prefab:
     - target: {fileID: 224205497696060100, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -528
+      value: -47.5
       objectReference: {fileID: 0}
     - target: {fileID: 224207397801611664, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
@@ -853,7 +853,7 @@ Prefab:
     - target: {fileID: 224207397801611664, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -50
+      value: -47.5
       objectReference: {fileID: 0}
     - target: {fileID: 224103650493484512, guid: b847e4dd2515183428a95cb12a3a5e85,
         type: 2}
@@ -1114,18 +1114,6 @@ Prefab:
       propertyPath: GO_Hatch
       value: 
       objectReference: {fileID: 1911931096}
-    - target: {fileID: 114997110410521800, guid: d3630609de0eb9a4aa49f2a547719c0c,
-        type: 2}
-      propertyPath: PF_Lunge
-      value: 
-      objectReference: {fileID: 1823728772266120, guid: c1d4d172d5f22df45a0bea0b379e5da4,
-        type: 2}
-    - target: {fileID: 114997110410521800, guid: d3630609de0eb9a4aa49f2a547719c0c,
-        type: 2}
-      propertyPath: Sword_Lunge
-      value: 
-      objectReference: {fileID: 1823728772266120, guid: c1d4d172d5f22df45a0bea0b379e5da4,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3630609de0eb9a4aa49f2a547719c0c, type: 2}
   m_IsPrefabParent: 0
