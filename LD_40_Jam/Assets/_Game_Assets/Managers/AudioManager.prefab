@@ -76,7 +76,7 @@ MonoBehaviour:
   - name: Player Slash
     description: Player strike
     source: {fileID: 0}
-    clip: {fileID: 8300000, guid: d076a47abcc81ef43970e0e78ea5147b, type: 3}
+    clip: {fileID: 8300000, guid: 123b7b847791a744c9d68a38491f28aa, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
