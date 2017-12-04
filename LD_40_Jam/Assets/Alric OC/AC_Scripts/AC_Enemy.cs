@@ -27,7 +27,7 @@ public class AC_Enemy : AC_Living
     Color originalColour;
 
     float attackDistanceThreshold = 1.5f;
-    float timeBetweenAttacks = 1;
+    float timeBetweenAttacks = 0.8f;
     float damage = 1;
     int destPoint = 0;
 
@@ -165,7 +165,7 @@ public class AC_Enemy : AC_Living
         Vector3 attackPosition = target.position - dirToTarget * (myCollisionRadius);
 
 
-        float attackSpeed = 3;
+        float attackSpeed = 3.5f;
         float percent = 0;
 
         skinMaterial.color = Color.red;
@@ -201,7 +201,7 @@ public class AC_Enemy : AC_Living
 
                 if (!dead)
                 {
-                    pathfinder.speed = mFL_moveSpeed * 2;
+                    pathfinder.speed = mFL_moveSpeed * 2.5f;
                     pathfinder.SetDestination(targetPosition);
                 }
             }
@@ -235,7 +235,7 @@ public class AC_Enemy : AC_Living
 
                 if (!dead)
                 {
-                    pathfinder.speed = mFL_moveSpeed * 0.8f;
+                    pathfinder.speed = mFL_moveSpeed * 2f;
                     pathfinder.SetDestination(targetPosition);
                 }
             }
