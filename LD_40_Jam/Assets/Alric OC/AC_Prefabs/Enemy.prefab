@@ -189,6 +189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 1
   health: 0
+  death_sound: 
+  impact_sound: 
   deathEffect: {fileID: 194702, guid: ba328c08808732344ba5e2b1c5d19f30, type: 2}
   points:
   - {fileID: 0}
@@ -519,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37127ecd8d8709c488995d3810efabd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 10
+  viewRadius: 3
   viewAngle: 360
   withinsearchrange: 0
   targetMask:
