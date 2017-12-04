@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PC_Melee : MonoBehaviour {
 
+    [Header("Swinging")]
     public GameObject Sword_Sprite;
     public int swings;
     public KeyCode KC_Attack;
@@ -11,7 +12,13 @@ public class PC_Melee : MonoBehaviour {
 
     public bool BL_Staggered = false;
 
+    [Header("Swing Prefab")]
     public GameObject GO_MeleeCast;
+
+    //Restore Swings
+    [Header("Restore Swing Rate")]
+    float CoolDown = 0;
+    public float Delay;
 
 	// Use this for initialization
 	void Start () {
@@ -22,10 +29,24 @@ public class PC_Melee : MonoBehaviour {
 	void Update () {
         if (!BL_Staggered)
            if (Input.GetKeyDown(KC_Attack)) Attack();
+
+        RestoreSwings();
 	}
+
+    void RestoreSwings()
+    {
+        if (IN_Swings >= 3) return;
+
+        if (Time.time > CoolDown)
+        {
+            CoolDown = Time.time + Delay;
+            IN_Swings++;
+        }
+    }
 
     void Attack()
     {
+        CoolDown = Time.time + Delay;
         IN_Swings--;
         Sword_Sprite.SetActive(false);
         StartCoroutine(SwordSpriteAnimator());

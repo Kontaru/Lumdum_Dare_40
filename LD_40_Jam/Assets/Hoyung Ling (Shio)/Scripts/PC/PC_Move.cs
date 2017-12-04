@@ -19,6 +19,11 @@ public class PC_Move : MonoBehaviour {
     public float FL_moveSpeed;
     float FL_defaultSpeed;
 
+    //Restore Dashes
+    [Header("Dash Reset Rate")]
+    float CoolDown = 0;
+    public float Delay;
+
     // Use this for initialization
     void Start () {
         RB_PC = GetComponent<Rigidbody>();
@@ -34,11 +39,23 @@ public class PC_Move : MonoBehaviour {
         PlayerMove();
         LookInput();
 
+        RestoreDashes();
     }
 
     void FixedUpdate()
     {
         RB_PC.MovePosition(transform.position + direction * Time.fixedDeltaTime);
+    }
+
+    void RestoreDashes()
+    {
+        if (IN_Dashes >= 2) return;
+
+        if (Time.time > CoolDown)
+        {
+            CoolDown = Time.time + Delay;
+            IN_Dashes++;
+        }
     }
 
     void StaggerCheck()
@@ -88,6 +105,7 @@ public class PC_Move : MonoBehaviour {
         BL_Dash = true;
 
         //Do the dash and decrease dash charges
+        CoolDown = Time.time + Delay;
         IN_Dashes--;
         FL_moveSpeed = FL_defaultSpeed * 3;
 
