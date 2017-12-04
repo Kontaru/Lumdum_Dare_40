@@ -9,11 +9,8 @@ public class WinScreenMessage : MonoBehaviour {
     public TextMeshProUGUI TMP_2;
     public TextMeshProUGUI TMP_3;
 
-    void Start()
+    void Update()
     {
-        //TMP_1 = GetComponent<TextMeshProUGUI>();
-        //TMP_2 = GetComponent<TextMeshProUGUI>();
-        //TMP_3 = GetComponent<TextMeshProUGUI>();
 
         TMP_1.text = string.Format("You collected " + GameManager.instance.player_Coins + " coins!");
         TMP_2.text = string.Format("Health multiplier: " + GameManager.instance.player_Health);

@@ -11,6 +11,7 @@ public class PC_Health : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        GameManager.instance.player_Health = health;
         max_health = health;
     }
 
