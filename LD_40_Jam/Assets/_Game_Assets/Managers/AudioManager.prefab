@@ -433,10 +433,10 @@ MonoBehaviour:
   - name: Win
     description: Win tune
     source: {fileID: 0}
-    clip: {fileID: 8300000, guid: 123a717e62f93924c8a64eb490d72b88, type: 3}
+    clip: {fileID: 8300000, guid: 721a087516fa7bb458f4f96d88fb0b59, type: 3}
     volume: 0.5
     pitch: 1
-    loop: 1
+    loop: 0
     Fade: 0
     fadeDuration: 0
     startVol: 0
