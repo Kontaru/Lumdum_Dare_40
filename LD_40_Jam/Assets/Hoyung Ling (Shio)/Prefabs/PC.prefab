@@ -105,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1758051654850700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.9, y: 0.44, z: 86.9}
+  m_LocalPosition: {x: -4.764389, y: 0, z: -9.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4479402782267208}
@@ -244,6 +244,7 @@ MonoBehaviour:
   BL_Staggered: 0
   GO_MeleeCast: {fileID: 1216307190240754, guid: bc2a3e3ed17951a488bfc02ef73e1d09,
     type: 2}
+  Delay: 3
 --- !u!114 &114208868680704566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,6 +299,7 @@ MonoBehaviour:
   BL_Moving: 1
   BL_Staggered: 0
   FL_moveSpeed: 10
+  Delay: 3
 --- !u!114 &114955430897561276
 MonoBehaviour:
   m_ObjectHideFlags: 1
