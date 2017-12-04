@@ -30,7 +30,7 @@ public class PC_Pouch : MonoBehaviour {
     void TakeCoin(int value)
     {
         coins += value;
-
+        GameManager.instance.player_Coins = coins;
         //HYL stuff
         AC_FieldOfNoise.temp_viewRadius += 0.5f;
         BL_Animate = true;

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PC_Health : MonoBehaviour {
 
     public int loadindex;
-    public int health;
+    public int health = 4;
     public static int max_health;
 
     // Use this for initialization
@@ -17,6 +17,7 @@ public class PC_Health : MonoBehaviour {
     void TakeDamage(int damage)
     {
         health -= damage;
+        GameManager.instance.player_Health = health;
 
         if(health <= 0)
         {

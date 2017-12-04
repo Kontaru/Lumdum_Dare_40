@@ -409,3 +409,45 @@ MonoBehaviour:
     wasFading: 0
     fadeTime: 0
     fadeStartTime: 0
+  - name: Game Over
+    description: Boss Music
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 880ebb3f2dbebc141bf313bd9ede5506, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    Fade: 0
+    fadeDuration: 0
+    startVol: 0
+    endVol: 0.5
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0
+  - name: Win
+    description: Win tune
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 123a717e62f93924c8a64eb490d72b88, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    Fade: 0
+    fadeDuration: 0
+    startVol: 0
+    endVol: 0.5
+    useGraph: 0
+    AC:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    wasFading: 0
+    fadeTime: 0
+    fadeStartTime: 0

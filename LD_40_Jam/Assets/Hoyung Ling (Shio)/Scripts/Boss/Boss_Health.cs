@@ -14,7 +14,7 @@ public class Boss_Health : MonoBehaviour {
 
     public State CurrentState;
 
-    public int health;
+    public static int health = 16;
     int max_health;
 
     // Use this for initialization

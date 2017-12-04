@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
     public int player_Coins;
+    public int player_Health;
 
     bool BL_Pause = false;
 
@@ -23,11 +24,6 @@ public class GameManager : MonoBehaviour {
         }
 
         DontDestroyOnLoad(transform.gameObject);
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        player_Coins = PC_Pouch.coins;
     }
 
     #region ~ Scene Related ~
