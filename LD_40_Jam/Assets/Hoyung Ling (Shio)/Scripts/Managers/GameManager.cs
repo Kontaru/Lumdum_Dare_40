@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
+    public int player_Coins;
+
     bool BL_Pause = false;
 
     void Awake()
@@ -25,7 +27,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        player_Coins = PC_Pouch.coins;
     }
 
     #region ~ Scene Related ~

@@ -16,6 +16,9 @@ public class PC_Controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        AudioManager.instance.Stop("Theme");
+        AudioManager.instance.Play("Dungeon Music");
+
         CC_Melee = GetComponent<PC_Melee>();
         CC_Move = GetComponent<PC_Move>();
     }

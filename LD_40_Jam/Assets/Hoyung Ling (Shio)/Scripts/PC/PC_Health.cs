@@ -7,7 +7,7 @@ public class PC_Health : MonoBehaviour {
 
     public int loadindex;
     public int health;
-    int max_health;
+    public static int max_health;
 
     // Use this for initialization
     void Start () {
@@ -23,7 +23,12 @@ public class PC_Health : MonoBehaviour {
             GameManager.instance.LoadScene(loadindex);
         }
 
-        AudioManager.instance.Play("Player Take Hit");
-        AudioManager.instance.Play("Impact Noise 1");
+        AudioManager.instance.Play("BossDamage");
+    }
+
+    void TakeHealth(int heal)
+    {
+        health += heal;
+        AudioManager.instance.Play("Heal");
     }
 }

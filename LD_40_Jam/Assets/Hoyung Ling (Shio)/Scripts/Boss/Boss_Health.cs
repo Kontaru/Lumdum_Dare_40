@@ -36,7 +36,14 @@ public class Boss_Health : MonoBehaviour {
             GO_Hatch.SetActive(true);
         }
 
-        AudioManager.instance.Play("Player Take Hit");
-        AudioManager.instance.Play("Impact Noise 1");
+        int rand = Random.Range(0, 2);
+
+        if (rand == 0)
+            AudioManager.instance.Play("PC Damage 1");
+        else if (rand == 1)
+            AudioManager.instance.Play("PC Damage 2");
+        else if (rand == 2)
+            AudioManager.instance.Play("Metal Noise 2");
+
     }
 }

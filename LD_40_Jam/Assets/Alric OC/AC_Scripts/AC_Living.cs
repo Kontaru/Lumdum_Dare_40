@@ -5,6 +5,10 @@ public class AC_Living : MonoBehaviour, IDamageable
 {
     public float startingHealth;
     public float health;
+
+    [Header("Sounds for Audiomanager")]
+    public string death_sound;
+    public string impact_sound;
     protected bool dead;
 
     public event System.Action OnDeath;
@@ -22,6 +26,8 @@ public class AC_Living : MonoBehaviour, IDamageable
     public virtual void TakeDamage(float damage)
     {
         health -= damage;
+        AudioManager.instance.Play(death_sound);
+        AudioManager.instance.Play(impact_sound);
 
         if (health <= 0 && !dead)
         {

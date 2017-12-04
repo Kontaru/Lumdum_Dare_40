@@ -5,6 +5,7 @@ using UnityEngine;
 public class Boss_Attack : MonoBehaviour {
 
     public GameObject PF_Bullet;
+    public GameObject PF_Lunge;
     public GameObject GO_EjectionPoint;
 
     public bool BL_Target = false;                  //Do we target?
@@ -20,6 +21,15 @@ public class Boss_Attack : MonoBehaviour {
 	void Update () {
         FireAtPC();
 	}
+
+    #region --- Spawn Lunge ---
+
+    void SpawnLunge()
+    {
+        Instantiate(PF_Lunge, GO_EjectionPoint.transform.position, GO_EjectionPoint.transform.rotation);
+    }
+
+    #endregion
 
     #region --- Spawn Bullet ---
 

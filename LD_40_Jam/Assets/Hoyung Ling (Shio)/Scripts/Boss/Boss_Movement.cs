@@ -78,7 +78,7 @@ public class Boss_Movement : MonoBehaviour {
     public void RunFrom()
     {
         enemy.destination = Behind.position;
-        enemy.speed = moveSpeed * 2.0f;
+        enemy.speed = moveSpeed * 4.0f;
     }
 
     public void DashSideways()
